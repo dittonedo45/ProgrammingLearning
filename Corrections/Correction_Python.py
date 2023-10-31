@@ -207,22 +207,13 @@ def And(nb1, nb2):
     return 1 if nb1*nb2 else 0
 
 def Or(nb1, nb2):
-    if(nb1):
-        return 1
-    else:
-        if(nb2):
-            return 1
-    return 0
+    return 1 if not nb1 and nb2 or nb1 else 0
 
 def Xnor(nb1, nb2):
-    if nb1 == nb2:
-        return 1
-    return 0
+    return 1 if nb1 == nb2 else 0
 
 def Xor(nb1, nb2):
-    if nb1 != nb2:
-        return 1
-    return 0
+    return 1 if nb1 != nb2 else 0
 
 def No(nb1):
     return abs(1 - nb1)

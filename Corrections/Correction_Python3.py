@@ -24,10 +24,7 @@ name = "Stan"
 #   Print the following sentence in the console "You are NAME and you are AGE years old !". Don't forget to add a newline at the end
 print("You are {0} and you are {1} years old!".format(name, age))
 
-#   FiXME: Concatenation
-#   Create a new string variable called "hello" which value is "Hello ". Add "name" at the end of "hello" (Concatenation) then print it
-hello = 'Hello '
-hello = hello + name
+hello = f'Hello {name}'
 print(hello)
 
 #   FIXME: Array
@@ -175,7 +172,7 @@ print(rdmGenBounds(0, 5))
 #   {x4,x5,x6,}
 #   {x7,x8,x9,}
 
-array = [[0 for x in range(3)] for x in range(3)]
+array = [[0 for _ in range(3)] for _ in range(3)]
 for i in range(0, 3):
     print("{", end="")
     for j in range(0, 3):
@@ -223,22 +220,13 @@ def And(nb1, nb2):
     return 1 if nb1*nb2 else 0
 
 def Or(nb1, nb2):
-    if(nb1):
-        return 1
-    else:
-        if(nb2):
-            return 1
-    return 0
+    return 1 if not nb1 and nb2 or nb1 else 0
 
 def Xnor(nb1, nb2):
-    if nb1 == nb2:
-        return 1
-    return 0
+    return 1 if nb1 == nb2 else 0
 
 def Xor(nb1, nb2):
-    if nb1 != nb2:
-        return 1
-    return 0
+    return 1 if nb1 != nb2 else 0
 
 def No(nb1):
     return abs(1 - nb1)
